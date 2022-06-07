@@ -1,6 +1,6 @@
 # from os import RWF_APPEND
 import re
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import Http404
 
@@ -23,7 +23,7 @@ def posts(request):
 
 def post(request, post_id):
     '''show a single post and all its entries.'''
-    post = Post.objects.get(id=post_id)
+    post = get_object_or_404(Post, id=post_id)
     # Make sure the topic belongs to the current user.
     # if post.owner != request.user:
     #     raise Http404
