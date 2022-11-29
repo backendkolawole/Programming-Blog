@@ -1,4 +1,5 @@
 "# Programming-Blog" 
-A Django Blog that allows users to create posts and multiple entries for each post topic. The blog contains a home page that shows all posts in chronological order and other pages that allows users to edit or delete existing posts. The program was also bulit with user authentication and registration system.
+A Django Blog that allows users to create posts and multiple entries for each post topic. The blog contains a home page that shows all posts in chronological order and other pages that allows users to edit or delete existing posts. This blog can perform basic Create Read Update and Delete operations and was written with function based views. The program was also bulit with user authentication and registration system. It is a Docker based app and was deployed on Heroku. For the database, I created a Postgres database with Amazon RDS. 
+
 
 
