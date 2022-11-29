@@ -26,7 +26,7 @@ urlpatterns = [
     # Delete a post
     path('posts/<int:post_id>/delete', views.delete_post, name='delete_post'),
     
-    # Add a new entry
+    # create a new entry
     path('posts/<int:post_id>/new_entry/', views.create_entry, name='new_entry'),
     
     # Edit an entry.

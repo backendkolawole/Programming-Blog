@@ -9,14 +9,16 @@ from django.http import Http404
 from .models import Post, Entry
 from .forms import EntryForm, PostForm
 
+
 def index(request):
     '''home page for Blog_app'''
     return render(request, 'blog_app/index.html')
 
-# @login_required
+
+@login_required
 def posts(request):
     '''show all posts'''
-    posts = Post.objects.order_by('date_added')
+    posts = Post.objects.filter(owner=request.user).order_by('date_added')
     context = {'posts': posts}
     return render(request, 'blog_app/posts.html', context)
 
@@ -25,8 +27,8 @@ def post(request, post_id):
     '''show a single post and all its entries.'''
     post = get_object_or_404(Post, id=post_id)
     # Make sure the topic belongs to the current user.
-    # if post.owner != request.user:
-    #     raise Http404
+    if post.owner != request.user:
+        raise Http404
     entries = post.entry_set.order_by('-date_added')
     context = {'post': post, 'entries': entries}
     return render(request, 'blog_app/post.html', context)
