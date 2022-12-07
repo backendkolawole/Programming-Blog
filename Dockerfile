@@ -4,5 +4,6 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /code
 COPY requirements.txt /code/
 RUN pip install -r requirements.txt
+RUN python manage.py migrate
 COPY . /code/
 CMD gunicorn blog_project.wsgi:application --bind 0.0.0.0:$PORT
