@@ -38,7 +38,7 @@
 
 - In the same directory as settings.py, create a file called `.env`
 
-  - Set up `SECRET_KEY` variable
+  - Generate a secret key and set up `SECRET_KEY` variable in `.env` file
 
 > [!WARNING]
 > `SECRET_KEY` is the key to securing signed data – it is vital you keep this secure, or attackers could use it to generate their own signed values.
