@@ -13,7 +13,7 @@
 {% if user.is_authenticated %} 
 <div class="bg-light p-5 rounded-lg m-3">
   <h1 class="display-4">Track your learning!</h1>
-  <p class="lead"> A new Django project called Blog_app for publishing information on the World Wide Web about popular programming languages and useful frameworks. </p>
+  <p class="lead"> A Django blog called py-blog for publishing information on the World Wide Web about popular programming languages and frameworks. </p>
   <hr class="my-4">
   <p> This blog is for personal and educational use.</p>
     <a class="btn btn-primary btn-lg" href="{% url 'blog_app:posts' %}" role="button">Posts &raquo;</a>
@@ -22,7 +22,7 @@
 {% else %}
 <div class="bg-light p-5 rounded-lg m-3">
   <h1 class="display-4">Track your learning!</h1>
-  <p class="lead"> A new Django project called Blog_app for publishing information on the World Wide Web about popular programming languages and useful frameworks. </p>
+  <p class="lead"> A Django blog called py-blog for publishing information on the World Wide Web about popular programming languages and frameworks. </p>
   <hr class="my-4">
  <p> This blog is for personal and educational use.</p>
     <a class="btn btn-primary btn-lg" href="{% url 'users:register' %}" role="button">Register &raquo;</a>
